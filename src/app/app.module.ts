@@ -3,27 +3,33 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-
-import { RegionListComponent } from './region-list/region-list.component'
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule, MatAutocompleteModule, MatInputModule } from '@angular/material';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
-import { RegionDropdownComponent } from './components/region-dropdown/region-dropdown.component';
-import { CityDropdownComponent } from './components/city-dropdown/city-dropdown.component';
+import { SearchComponent } from './components/search/search.component';
+// import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegionListComponent,
-    RegionDropdownComponent,
-    CityDropdownComponent
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

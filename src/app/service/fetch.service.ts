@@ -8,7 +8,7 @@ import { City } from '../entity/City';
   providedIn: 'root'
 })
 
-export class RegionService {
+export class FetchService {
 
   constructor(private http: HttpClient) { }
 
