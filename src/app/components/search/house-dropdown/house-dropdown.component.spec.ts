@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchComponent } from './search.component';
+import { HouseDropdownComponent } from './house-dropdown.component';
 
-describe('RegionDropdownComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
+describe('HouseDropdownComponent', () => {
+  let component: HouseDropdownComponent;
+  let fixture: ComponentFixture<HouseDropdownComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
+      declarations: [ HouseDropdownComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchComponent);
+    fixture = TestBed.createComponent(HouseDropdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

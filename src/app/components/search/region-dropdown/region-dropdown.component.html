@@ -1,0 +1,12 @@
+<form>
+  <mat-form-field>
+    <input type="text" placeholder="Region" aria-label="Number" 
+    matInput [formControl]="regionControl" [matAutocomplete]="auto"  
+     required>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onChange($event.option.value)">
+      <mat-option *ngFor="let region of filteredRegions | async" [value]="region">
+        {{region.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

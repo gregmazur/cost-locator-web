@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule, MatAutocompleteModule, MatInputModule } from '@angular/material';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './components/search/search.component';
-// import {MatFormFieldModule} from '@angular/material/form-field';
+import { RegionDropdownComponent } from './components/search/region-dropdown/region-dropdown.component';
+import { CityDropdownComponent } from './components/search/city-dropdown/city-dropdown.component';
+import { StreetDropdownComponent } from './components/search/street-dropdown/street-dropdown.component';
+import { HouseDropdownComponent } from './components/search/house-dropdown/house-dropdown.component';
 
 
 
@@ -17,19 +17,21 @@ import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    RegionDropdownComponent,
+    CityDropdownComponent,
+    StreetDropdownComponent,
+    HouseDropdownComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatSelectModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatNativeDateModule,
-    MatAutocompleteModule,
-    MatInputModule
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      BrowserAnimationsModule,
+      MatAutocompleteModule,
+      FormsModule,
+      ReactiveFormsModule,
+      MatNativeDateModule,
+      MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

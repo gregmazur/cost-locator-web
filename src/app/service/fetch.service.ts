@@ -12,7 +12,7 @@ export class FetchService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Region[]> {
+  getAllRegions(): Observable<Region[]> {
     return this.http.get<Region[]>('//localhost:8000/regions');
   }
 
