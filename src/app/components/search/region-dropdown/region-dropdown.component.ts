@@ -32,7 +32,7 @@ export class RegionDropdownComponent implements OnInit {
   private filterRegions(value: string): Region[] {
     console.log('region filter called on ' + value);
     if (typeof value === "string") {
-      const filterValue = value.toUpperCase();
+      const filterValue = value.toLowerCase();
       return this.regions.filter(r => r.name.toLowerCase().includes(filterValue));
     } else {
       return this.regions;
