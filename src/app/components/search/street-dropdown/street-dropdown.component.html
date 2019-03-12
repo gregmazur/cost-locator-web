@@ -1,3 +1,11 @@
-<p>
-  street-dropdown works!
-</p>
+<form>
+  <mat-form-field>
+    <input type="text" placeholder="Street" aria-label="Number" matInput [formControl]="streetControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onChange($event.option.value)">
+      <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+        {{street.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

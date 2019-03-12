@@ -11,7 +11,17 @@ import { CityDropdownComponent } from './components/search/city-dropdown/city-dr
 import { StreetDropdownComponent } from './components/search/street-dropdown/street-dropdown.component';
 import { HouseDropdownComponent } from './components/search/house-dropdown/house-dropdown.component';
 
-
+export const MODULE_DEPENDENCIES = [
+  BrowserModule,
+  AppRoutingModule,
+  HttpClientModule,
+  BrowserAnimationsModule,
+  MatAutocompleteModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatNativeDateModule,
+  MatInputModule
+];
 
 
 @NgModule({
@@ -23,16 +33,9 @@ import { HouseDropdownComponent } from './components/search/house-dropdown/house
     HouseDropdownComponent
   ],
   imports: [
-      BrowserModule,
-      AppRoutingModule,
-      HttpClientModule,
-      BrowserAnimationsModule,
-      MatAutocompleteModule,
-      FormsModule,
-      ReactiveFormsModule,
-      MatNativeDateModule,
-      MatInputModule
+     MODULE_DEPENDENCIES
   ],
+  exports: [MODULE_DEPENDENCIES],
   providers: [],
   bootstrap: [AppComponent]
 })

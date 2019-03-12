@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegionDropdownComponent } from './region-dropdown.component';
+import { MODULE_DEPENDENCIES } from 'src/app/app.module';
 
 describe('RegionDropdownComponent', () => {
   let component: RegionDropdownComponent;
@@ -8,7 +9,8 @@ describe('RegionDropdownComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegionDropdownComponent ]
+      declarations: [ RegionDropdownComponent ],
+      imports: [MODULE_DEPENDENCIES]
     })
     .compileComponents();
   }));

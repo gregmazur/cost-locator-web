@@ -1,6 +1,8 @@
 <div class="container">
 	<div class="row">
 		<app-region-dropdown (region)="regionChanged($event)"></app-region-dropdown>
-		<app-city-dropdown [region]="region"></app-city-dropdown>
+		<app-city-dropdown [region]="region" (city)="cityChanged($event)"></app-city-dropdown>
+		<app-street-dropdown [city]="city" (street)="streetChanged($event)"></app-street-dropdown>
+		<app-house-dropdown [street]="street"></app-house-dropdown>
 	</div>
 </div>
