@@ -3,6 +3,11 @@
 		<app-region-dropdown (region)="regionChanged($event)"></app-region-dropdown>
 		<app-city-dropdown [region]="region" (city)="cityChanged($event)"></app-city-dropdown>
 		<app-street-dropdown [city]="city" (street)="streetChanged($event)"></app-street-dropdown>
-		<app-house-dropdown [street]="street"></app-house-dropdown>
+		<app-house-dropdown [street]="street" (address)="addressChanged($event)"></app-house-dropdown>
 	</div>
+
+	<button (click)="search()">Search</button>
+
+	<app-tender-list [search]="searchCriteria"></app-tender-list>
+
 </div>

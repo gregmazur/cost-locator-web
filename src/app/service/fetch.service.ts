@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Region } from '../entity/Region';
 import { City } from '../entity/City';
 import { Street } from '../entity/Street';
 import { Address } from '../entity/Address';
+import { Tender } from '../entity/Tender';
+import { SearchCriteria } from '../entity/SearchCriteria';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class FetchService {
+  
 
   constructor(private http: HttpClient) { }
 
@@ -28,5 +35,10 @@ export class FetchService {
 
   getAddresses(streetId: number): Observable<Address[]> {
     return this.http.get<Address[]>('//localhost:8000/streets/' + streetId);
+  }
+
+  getTenders(searchCriteria: SearchCriteria): Observable<Tender[]>{
+    console.log(searchCriteria);
+    return this.http.post<Tender[]>('//localhost:8000/search', searchCriteria, httpOptions);
   }
 }

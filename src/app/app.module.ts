@@ -10,6 +10,7 @@ import { RegionDropdownComponent } from './components/search/region-dropdown/reg
 import { CityDropdownComponent } from './components/search/city-dropdown/city-dropdown.component';
 import { StreetDropdownComponent } from './components/search/street-dropdown/street-dropdown.component';
 import { HouseDropdownComponent } from './components/search/house-dropdown/house-dropdown.component';
+import { TenderListComponent } from './components/tender-list/tender-list.component';
 
 export const MODULE_DEPENDENCIES = [
   BrowserModule,
@@ -30,7 +31,8 @@ export const MODULE_DEPENDENCIES = [
     RegionDropdownComponent,
     CityDropdownComponent,
     StreetDropdownComponent,
-    HouseDropdownComponent
+    HouseDropdownComponent,
+    TenderListComponent
   ],
   imports: [
      MODULE_DEPENDENCIES

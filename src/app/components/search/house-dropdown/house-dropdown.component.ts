@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FetchService } from 'src/app/service/fetch.service';
 import { Street } from 'src/app/entity/Street';
 import { Observable } from 'rxjs';
@@ -21,6 +21,7 @@ export class HouseDropdownComponent {
   houses: Array<Address> = [];
   filteredHouses: Observable<Address[]>;
   houseControl = new FormControl();
+  @Output() address = new EventEmitter<Address>();
 
   constructor(private fetchService: FetchService) { }
 
@@ -48,7 +49,7 @@ export class HouseDropdownComponent {
     console.log('sel reg ' + house.houseNumber);
     this.houseControl.setValue(house.houseNumber);
 
-    // this.street.emit(street);
-    // console.log('emit street')
+    this.address.emit(house);
+    console.log('emit address')
   }
 }
