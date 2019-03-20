@@ -11,9 +11,9 @@ export class SearchCriteria {
 
     address: number;
 
-    from: number;
+    page: number;
 
-    to: number;
+    size: number;
 
     tenderIds: number[];
     
