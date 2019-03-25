@@ -17,15 +17,21 @@ export class TenderListComponent {
   set search(search: SearchCriteria) {
     if (search != null) {
       this.searchCriteria = search;
-      this.loadList();
+      this.loadList(true);
     }
   }
 
   searchCriteria: SearchCriteria;
 
+  resultSize: number = 0;
+
+  pageSizeOptions = [5, 10, 25, 50];
+
   displayedColumns = ['title', 'amount'];
 
-  dataSource: MatTableDataSource<Tender>;
+  dataSource: MatTableDataSource<Tender> = new MatTableDataSource();
+
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -36,24 +42,28 @@ export class TenderListComponent {
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
-  loadList() {
-    if(SearchCriteria == null){
+  loadList(needResultSize: boolean) {
+    if (this.searchCriteria == null) {
       return;
     }
     this.searchCriteria.size = this.paginator.pageSize;
     this.searchCriteria.page = this.paginator.pageIndex;
+    this.searchCriteria.isResultSizeNeeded = needResultSize;
     console.log('load tender list called on city id : ' + this.searchCriteria.city + ' page : '
       + this.searchCriteria.page + ' size : ' + this.searchCriteria.size)
     this.fetchService.getTenders(this.searchCriteria).subscribe(data => {
-      console.log(data);
-      this.dataSource = new MatTableDataSource(data.tendersPortion);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator.length = data.size;
+      setTimeout(() => {
+        console.log(data);
+        this.dataSource.data = data.tendersPortion;
+        if (data.size != null) {
+          console.log('size upadeted to ' + data.size);
+          this.resultSize = data.size;
+        }
+        console.log('resultSize is ' + this.resultSize);
+      })
+
     });
   }
 

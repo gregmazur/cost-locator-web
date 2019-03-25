@@ -15,6 +15,8 @@ export class SearchCriteria {
 
     size: number;
 
+    isResultSizeNeeded: boolean;
+
     tenderIds: number[];
     
     constructor(city: City, street:  Street, address: Address){
