@@ -5,16 +5,17 @@
 </ul> -->
 
 <mat-table [dataSource]="dataSource" matSort>
-  <!-- ID Column -->
+  <!-- Title -->
   <ng-container matColumnDef="title">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
   </ng-container>
+  
 
-  <!-- Progress Column -->
+  <!-- Amount -->
   <ng-container matColumnDef="amount">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Amount </mat-header-cell>
-    <mat-cell *matCellDef="let row"> {{row.amount}} грн </mat-cell>
+    <mat-cell *matCellDef="let row"> {{row.amount}} {{row.currency}} </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

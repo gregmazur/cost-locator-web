@@ -31,17 +31,12 @@ export class TenderListComponent {
 
   dataSource: MatTableDataSource<Tender> = new MatTableDataSource();
 
-
-
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
 
   constructor(private fetchService: FetchService) {
     this.dataSource = new MatTableDataSource([]);
-  }
-
-  ngAfterViewInit() {
   }
 
   loadList(needResultSize: boolean) {
@@ -57,6 +52,7 @@ export class TenderListComponent {
       setTimeout(() => {
         console.log(data);
         this.dataSource.data = data.tendersPortion;
+        this.dataSource.sort = this.sort;
         if (data.size != null) {
           console.log('size upadeted to ' + data.size);
           this.resultSize = data.size;
