@@ -10,6 +10,14 @@
     <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
   </ng-container>
+
+  <!-- Link -->
+  <ng-container matColumnDef="link">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Link </mat-header-cell>
+    <mat-cell *matCellDef="let row"> 
+      <a target="_blank" rel="noopener noreferrer" 
+      href="https://prozorro.gov.ua/tender/{{row.tenderID}}">https://prozorro.gov.ua/tender/{{row.tenderID}}</a>  </mat-cell>
+  </ng-container>
   
 
   <!-- Amount -->

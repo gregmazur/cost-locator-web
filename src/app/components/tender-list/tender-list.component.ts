@@ -27,7 +27,7 @@ export class TenderListComponent {
 
   pageSizeOptions = [5, 10, 25, 50];
 
-  displayedColumns = ['title', 'amount'];
+  displayedColumns = ['title', 'link', 'amount'];
 
   dataSource: MatTableDataSource<Tender> = new MatTableDataSource();
 
